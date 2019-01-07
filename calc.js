@@ -82,3 +82,17 @@ $(function(){
 		}
 	});
 });
+
+function Click_me(){
+	var number;
+	$("#but").on("click", function(){
+		number = $("#in1").val();
+
+		if ((number%3)==0){
+			$("#clk_out").html("divisible");
+		}
+		else{
+			$("#clk_out").html("not divisible");
+		}
+	});
+}

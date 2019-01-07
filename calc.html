@@ -5,7 +5,7 @@
 <style>
 button {
 font-size: 200%;
-width: 40px;
+width: 100px;
 }
 
 input {
@@ -17,8 +17,8 @@ text-align: right;
 </style>
 </head>
 
-<body style="background-color: black;">
-
+<body>
+<h1>CALCULATOR</h1>
 <table>
 <tr>
   <td colspan="4"><input id="display" name="display" disabled></input></td>
@@ -52,6 +52,14 @@ text-align: right;
 
 
 </table>
+<br>
+<h1>3 Divisiblity Check</h1>
+<div>
+  Input First Number :<input type="number" id="in1" name="in1"><br>
+  <button id="but" onclick="Click_me()">Click pls!</button>
+  <br>
+  <span id="clk_out">Result</span>
+</div>
 
 <span id='output'><!-- Use this span for writing debug messages or anything else you think will help! --></span>
 
