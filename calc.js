@@ -96,3 +96,16 @@ function Click_me(){
 		}
 	});
 }
+
+function Even_Odd_Check(){
+	var number1;
+	$("#even_click").on("click", function(){
+		number1 = $("even_odd").val();
+		if ((number1 % 2)==0){
+			$("#even_out").html("Very Even");
+		}
+		else{
+			$("#even_out").html("Very Odd");
+		}
+	});
+}
