@@ -109,3 +109,32 @@ function Even_Odd_Check(){
 		}
 	});
 }
+
+function age_checker(){
+	var age;
+
+	$("#age_in").on("click", function(){
+		age = $("#age_display").val();
+
+		if(age<18){
+			$("#final").html("Youngling");
+		}
+		else{
+			$("#final").html("18+");
+		}
+	});
+}
+
+function Greeting_alert(){
+	var name;
+	var chk_name = "Kazim";
+	$("#name_dis").on("click", function(){
+		name = $("#name_in").val();
+		if((name.is(chk_name)==1)){
+			$("#name _out").html("Same");
+		}
+		else{
+			$("#name_out").html("Not So Same");
+		}
+	});
+}
