@@ -130,11 +130,38 @@ function Greeting_alert(){
 	var chk_name = "Kazim";
 	$("#name_dis").on("click", function(){
 		name = $("#name_in").val();
-		if((name.is(chk_name)==1)){
+		if(name===chk_name){
 			$("#name _out").html("Same");
 		}
 		else{
 			$("#name_out").html("Not So Same");
+		}
+	});
+}
+
+function switch_divide(){
+	var three;
+	$("#switch_btn").on("click", function(){
+		three = $("#switch_in").val();
+		switch(three%3){
+			case 0:
+				$("#switch_out").html("This is a Divisible by three");
+				break;
+			default:
+				$("#switch_out").html("Not so divisible by three");
+		}
+	});
+}
+
+function input_checker(){
+	var input;
+	$("#text_btn").on("click", function(){
+		input = $("#in_text").val();
+		if((input > 65 && input < 90) || (input > 97 && input < 122)){
+			$("#out_text").html("Thats some text right?");
+		}
+		else{
+			$("#out_text").html("thats some non text shit");
 		}
 	});
 }
