@@ -157,11 +157,35 @@ function input_checker(){
 	var input;
 	$("#text_btn").on("click", function(){
 		input = $("#in_text").val();
-		if((input > 65 && input < 90) || (input > 97 && input < 122)){
+		if((input > 'A' && input < 'Z') || (input > 'a' && input < 'z')){
 			$("#out_text").html("Thats some text right?");
 		}
 		else{
 			$("#out_text").html("thats some non text shit");
 		}
+	});
+}
+
+function new_calc(){
+	var val_1;
+	var val_2;
+	var operator1;
+	var new_val;
+
+	operator1 = $(".but").click(function(){
+		$(this).val();
+	});
+
+
+	$("#btn_clk").on("click", function(){
+		val_1 = $("#in_1").val();
+		val_2 = $("#in_2").val();
+		/*operator1 = $(".but").click(function(){
+			$(this).val();
+		});*/
+
+		String(operator1);
+		new_val = val_1+operator1+val_2;
+		$("#cal_out").html(new_val);
 	});
 }
