@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web App Cycle</title>
+<style>
+	#first{
+		color:green;
+	}
+	#second{
+		color: red;
+	}
+</style>
+</head>
+<body>
+<ul id="first"></ul>
+<script>
+	function AddMessage(element, message){
+		var msgElement = document.createElement('li');
+		msgElement.textContent = message;
+		element.appendChild(msgElement);
+	}
+	var first = document.getElementById('first');
+	AddMessage(first, "Hello There");
+</script>
+<ul id="second"></ul>
+<script>
+	document.body.addEventListener("mousemove", function(){
+		var second = document.getElementById("second");
+		AddMessage(second, "Event:mousemove");
+	});
+	document.body.addEventListener("click", function(){
+		var second = document.getElementById("second");
+		AddMessage(second, "Event: click");
+	});
+</script>
+</body>
+</html>
