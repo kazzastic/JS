@@ -220,3 +220,53 @@ values.sort(function(value1, value2){
 	callback_val = value1 - value2;
 	return callback_val;
 });
+
+var ninja = {};
+ninja.name = "kaneki-kun";
+ninja.country = "Leaf_village_shinobi";
+ninja.type = "S Rank";
+ninja.death = "Zero Deaths";
+
+var wieldSword = function(){};
+wieldSword.swordType = "Shia-Power!";
+wieldSword.number = 7;
+wieldSword.ID = "Teri Maa Di Sword";
+
+var store = {
+	nextID  : 1,
+	cache : {},
+	add : function(fn){
+		if(!fn.id){
+			fn,id = this.nextID++;
+			this.cache[fn.id] = fn;
+			return true;
+		}
+	}
+};
+function ninja_boi(){
+	assert(store.add(ninja), "function was safely added!");
+	assert(!store.add(ninja), "But it was only added once!");
+}
+ninja_boi();
+ninja_boi();
+
+
+function isPrime(value){
+	if (!isPrime.answers){
+		isPrime.answers = {};
+	}
+	if(isPrime.answers[value] !== undefined){
+		return isPrime.answers[value];
+	}
+	var prime = value !== 1;
+	for(var i = 2; i < value; i++){
+		if(value % i == 0){
+			prime = false;
+			break;
+		}
+	}
+	return isPrime.answers[value] = prime;
+}
+assert(isPrime(5), "5 is prime");
+assert(isPrime.answers[5], "The answers were cached");
+isPrime(6);
