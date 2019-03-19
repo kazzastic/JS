@@ -216,10 +216,7 @@ console.log("After the calls have been made");
 
 var values = [0, 3 , 2, 5, 7, 4, 8, 1];
 var callback_val = [];
-values.sort(function(value1, value2){
-	callback_val = value1 - value2;
-	return callback_val;
-});
+values.sort((value1, value2) => callback_val = value1 - value2);
 
 var ninja = {};
 ninja.name = "kaneki-kun";
