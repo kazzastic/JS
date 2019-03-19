@@ -189,3 +189,34 @@ function new_calc(){
 		$("#cal_out").html(new_val);
 	});
 }
+
+
+function assert(value, desc){
+	var li = document.createElement("li");
+	li.className = value ? "pass" : "fail";
+	li.appendChild(document.createTextNode(desc));
+	document.getElementById("results");
+	document.getElementById("results").appendChild(li);
+}
+
+var text = "Domo Arigato";
+console.log("Before Defining the function here");
+
+function useless(ninjaCallback){
+	console.log("In the uselss function");
+	return ninjaCallback();
+}
+function getText(){
+	console.log("In the getText function");
+	return text;
+}
+console.log("Before making all the calls");
+assert(useless(getText)=== text, "The uesless function works" + text);
+console.log("After the calls have been made");
+
+var values = [0, 3 , 2, 5, 7, 4, 8, 1];
+var callback_val = [];
+values.sort(function(value1, value2){
+	callback_val = value1 - value2;
+	return callback_val;
+});
