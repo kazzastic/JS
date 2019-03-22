@@ -248,7 +248,7 @@ ninja_boi();
 ninja_boi();
 
 
-function isPrime(value){
+/*function isPrime(value){
 	if (!isPrime.answers){
 		isPrime.answers = {};
 	}
@@ -267,11 +267,12 @@ function isPrime(value){
 assert(isPrime(5), "5 is prime");
 assert(isPrime.answers[5], "The answers were cached");
 isPrime(6);
-
+*/
 function concat(){
 	var var1 = "Kazim";
 	var var2 = "is";
-	var var3 = [["Mamu"]];
+	var var3 = "Mamu";
+	var var4 = "Qadir kaya haal hain saien";
 	var new_var;
 
 	new_var = var1 + var2 + var3;
@@ -280,5 +281,15 @@ function concat(){
 	//new_var = var2 + parseInt(var3);
 	//new_var = parseInt(var1);
 	//console.log(new_var);
-	console.log(var3);
+	console.log(var3[1]); 
+	console.log(var4[2]);
+}	
+
+var greet = name => "Greeting " + name;
+assert(greet("Shameer Server") === "greeting Shameer", "shameer is probably greeted");
+var anothergreet = 	function(name){
+	return "Greeting " + name;
 }
+assert(anothergreet("Shameer") === "Greetings Shameer", "Again, Shameer is probably greeted");
+
+var hellll =  (() => "Hello");
