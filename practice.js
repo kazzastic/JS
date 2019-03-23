@@ -39,3 +39,29 @@ function whatevs(a,b,c){
 	assert(arguments[3] === 4,'We can access the fourth argument');
 	assert(arguments[4] === 5,'We can access the fifth argument');
 }
+function sum(){
+	var sum = 0;
+	var i;
+	for(i=0; i <= arguments.length; i++){
+		sum += arguments[i];
+	}
+	return sum;
+}
+//uncomment if want to check the sum()
+/*assert(sum(1,2)===3, "Bhai yeh daikho 3 answer");
+assert(sum(2,3) === 5, "kaya apny arguments dally thay function banaty waqt no!");
+assert(sum(10,10)===20, "tu bohut mast kaam karta hia ray!");*/
+
+function add(...args){
+	let result = 0;
+	for(let arg of args) result += arg;
+	return result;
+}
+console.log(add(1,2,3,4,100));
+
+
+
+
+
+
+
