@@ -59,8 +59,41 @@ function add(...args){
 }
 console.log(add(1,2,3,4,100));
 
+/*function infiltrate(person){
+	assert(person === 'gardner', 'the person is a gardner');	//simple initialized stuff pretty basic
+	assert(person === arguments[0], 'the first arg is gardner');	//the first arg is what we initialized
 
+	arguments[0] = 'ninja';	//an array operation here and reinitialized the first index value
+	assert(person === 'ninja', 'the person is a ninja now');	
+	assert(person === arguments[0], 'arg 1 is ninja now!');
 
+	person = 'gardner';		//this shows how affecting the varaible person alsp affects the arg[0] indexd value truely incredible
+	assert(person === 'gardner', 'the person is a gardner again');
+	assert(person === arguments[0], 'first arg is now gardner');
+}*/
+//"use strict";
+function infiltrate(person){
+	if(person === 'gardner'){
+		console.log("the person is a gardner");
+	}
+	if(person === arguments[0]){
+		console.log("this is first arguments gardner");
+	}
+	arguments[0] = 'ninja';
+	if(person === 'ninja'){
+		console.log("the person is ninja now!");
+	}
+	if(person === arguments[0]){
+		console.log("First arg is ninja now!");
+	}
+	person = 'gardner';
+	if(person === 'gardner'){
+		console.log("its gardner again");
+	}
+	if(person === arguments[0]){
+		console.log("first arg is gardner again");
+	}
+}
 
 
 
