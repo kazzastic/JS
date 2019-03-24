@@ -94,6 +94,84 @@ function infiltrate(person){
 		console.log("first arg is gardner again");
 	}
 }
+function whatsContext(){
+	return this;
+}
+assert(whatsContext() === window, "Function call on Window");
+
+var getMyThis = whatsContext;
+assert(getMyThis() === window, "Another function call on the window");
+
+var ninja1 = {
+	getMyThis : whatsContext	
+};
+assert(ninja1.getMyThis() === window, "Working with 1st ninja");
+
+function Ninja(){
+	this.skulk = function(){
+		return this;
+	};
+}
+var ninja1 = new Ninja();
+var ninja2 = new Ninja();
+
+assert(ninja1.skulk === ninja1, "first ninja is skulking");
+assert(ninja2.skulk === ninja2, "second ninja is skulking");
+
+var puppet = {
+	rules : false
+};
+function Emperor(){
+	this.rules = true;
+	return this.rules; //we can also return the puppet function as well
+}
+var emperor = new Emperor();
+
+assert(emperor === puppet , "The emperor is merely a puppet");
+assert(emperor.rules === false, "The puppet does not know how to rule");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
