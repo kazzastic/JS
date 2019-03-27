@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-<head>
+<!-- saved from url=(0087)file:///home/kazzastic/Desktop/JS/if_i_am_practicing_then_I_should_make_a_new_file.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<title>Practice The JS basic bruhhhhh</title>
 </head>
 <body style="background-color: pink;">
@@ -8,7 +8,22 @@
 	Heck yes We doing this Shiz!
 </h1>
 <p>loren ipsum matherboardsssssssssssssssssss</p>
-<ul id="results"></ul>
+<ul id="results"><li class="pass">Function call on Window</li><li class="pass">Another function call on the window</li><li class="fail">Working with 1st ninja</li><li class="fail">first ninja is skulking</li><li class="fail">second ninja is skulking</li><li class="fail">The emperor is merely a puppet</li><li class="fail">The puppet does not know how to rule</li></ul>
+<button id="test">
+	Click Me!
+</button>
+<script>
+	function Button(){
+	this.clicked = false;
+	this.click = function(){
+		this.clicked = true;
+		assert(button.clicked, "The button was clicked");	
+	};
+}
+	var button = new Button();
+	var elem = document.getElementById("test");
+	elem.addEventListener("click", button.click);
+</script>
 <script src="practice.js"></script>
-</body>
-</html>
+
+</body></html>

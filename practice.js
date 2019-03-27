@@ -131,7 +131,16 @@ assert(emperor === puppet , "The emperor is merely a puppet");
 assert(emperor.rules === false, "The puppet does not know how to rule");
 console.log("anything");
 
-
+function Button(){
+	this.clicked = false;
+	this.click = function(){
+		this.clicked = true;
+		assert(button.clicked, "The button was clicked");	
+	};
+	var button = new Button();
+	var elem = document.getElementById("test");
+	elem.addEventListener("click", button.click);
+}
 
 
 
