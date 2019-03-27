@@ -142,9 +142,22 @@ function Button(){
 	elem.addEventListener("click", button.click);
 }
 
+function juggle(){
+	var result = 0;
+	var n;
+	for(n = 0; n < arguments.length; n++){
+		result += arguments[n];
+	}
+	this.result = result;
+}
+var bat1 = {};
+var bat2 = {};
 
+juggle.apply(bat1, [1,2,3,4]);
+juggle.call(bat2, 5,6,7,8);
 
-
+assert(bat1.result === 10, "juggle via apply");
+assert(bat2.result === 26, "juggle via call");
 
 
 
