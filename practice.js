@@ -137,10 +137,10 @@ function Button(){
 		this.clicked = true;
 		assert(button.clicked, "The button was clicked");	
 	};
-	var button = new Button();
-	var elem = document.getElementById("test");
-	elem.addEventListener("click", button.click);
 }
+var button = new Button();
+var elem = document.getElementById("test");
+elem.addEventListener("click", button.click);
 
 function juggle(){
 	var result = 0;
