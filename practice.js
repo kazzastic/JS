@@ -239,7 +239,26 @@ function report(message){
 skulk("Kuma");
 skulk("Yoshi");
 
+const firstConst = "Samuria";
+assert(firstConst === "Samuria", "First const is a samurai");
 
+try{
+	firstConst = "Ninja";
+	console.log("Should'nt be here");
+}
+catch(e){
+	console.log("An exception has occured");
+}
+assert(firstConst === "Samuria", "First const is unchanged");
+const secondConst = {};
+
+secondConst.weapon = "wakizashi";
+assert(secondConst.weapon === "wakizashi", "We can add new properties");
+
+const thirdConst = [];
+assert(thirdConst.length === 0, "No items in our array");
+thirdConst.push("Yoshi");
+assert(thirdConst.length === 1, "The array has changed");
 
 
 
