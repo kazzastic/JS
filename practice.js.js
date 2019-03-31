@@ -204,40 +204,11 @@ var Naruto_ninja2 = new Ninja();
 assert(Naruto_ninja1.getFeints() === 0, "The second ninja object gets its own feints varaible");
 
 function kazim(){
-	var some = 10;
+	var some = 1;
 	var another = 20;
-	this.Ali = function(){
-		console.log("do somehting");	
-	};
 }
 var kaz = new kazim();
-
-function animateIT(elementId){
-	var elem = document.getElementById(elementId);
-	var tick = 0;
-	var timer = setInterval(function(){
-		if(tick < 100){
-			elem.style.left = elem.style.top = tick + "px";
-			tick++;
-		}
-		else{
-			clearInterval(timer);
-			assert(tick === 100, "Tick accessed via closure");
-			assert(elem, "Element also accessed by closure");
-			assert(timer, "Timer also accessed by closure");
-		}
-	}, 10);
-}
-animateIT("box1");
-
-function skulk(ninja){
-	report(ninja + "skulking");
-}
-function report(message){
-	console.log(message);
-}
-skulk("Kuma");
-skulk("Yoshi");
+console.log(kaz.some());
 
 
 
