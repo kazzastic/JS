@@ -159,14 +159,49 @@ juggle.call(bat2, 5,6,7,8);
 assert(bat1.result === 10, "juggle via apply");
 assert(bat2.result === 26, "juggle via call");
 
+var outerValue = "samurai";
+var later;
+function outerFunc(){
+	var innerValue = "ninja";
 
+	function innerFunc(){
+		assert(outerValue === "samurai", "I can see the samurai");
+		assert(innerValue === "ninja", "I can see the ninja");
+	}
 
+	later = innerFunc;
+}
+outerFunc();
+later();
 
+function outer(){
+	var b = 10;
+	function inner(){
+		var a = 20;
+		console.log(a+b);
+	}
+	return inner;
+}
+var X = outer();
+var Y = outer();
 
+function Ninja(){
+	var feints = 0;
+	this.getFeints = function(){
+		return feints;
+	};
+	this.feint = function(){
+		feints++;
+	};
+}
+var Naruto_ninja1 = new Ninja();
+Naruto_ninja1.feint();
 
+assert(Naruto_ninja1.feints === undefined, "The privated data not accessable");
+assert(Naruto_ninja1.getFeints() === 1, "We're able to access the internal feint count");
 
-
-
+var Naruto_ninja2 = new Ninja();
+assert(Naruto_ninja1.getFeints() === 0, "The second ninja object gets its own feints varaible");
 
 
 
