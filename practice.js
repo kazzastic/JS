@@ -259,7 +259,45 @@ const thirdConst = [];
 assert(thirdConst.length === 0, "No items in our array");
 thirdConst.push("Yoshi");
 assert(thirdConst.length === 1, "The array has changed");
+/*
+try{
+	var shinobi = syncGetJSON("ninjas.json");
+	var missions = syncGetJSON(shinobi[0].missionsUrl);
+	var missionDetails = syncGetJSON(missions[0].detailsUrl);
+}
+catch(e){
+	console.log("uho we cant find the your bloody mission deatisl");
+}
+getJSON("ninjas.json", function(err, ninjas){
+	if(err){
+		console.log("Error fetching list of the ninjas", err);
+		return;
+	}
+	getJSON(ninja[0].missionUrl, function(err, 	missions){
+		if(err){
+			console.log("Error locating the ninjas", err);
+			return;
+		}
+		getJSON(missions[0].detailsUrl, function(err, missionDetails){
+			if(err){
+				console.log("Error locating mission details", err);
+				return;
+			}
+		});		
+	});
 
+});
+*/
+async(function*(){
+	try{
+		const ninjas = yield getJSON("ninjas.json");
+		const missions = yield getJSON(ninjas[0].missionsUrl);
+		const missionDescription = yield getJSON(missions[0].details);
+	}
+	catch(e){
+		console.log("cant fetch the information");
+	}
+});
 
 
 
