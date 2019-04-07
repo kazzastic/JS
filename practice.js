@@ -287,7 +287,7 @@ getJSON("ninjas.json", function(err, ninjas){
 	});
 
 });
-*/
+
 async(function*(){
 	try{
 		const ninjas = yield getJSON("ninjas.json");
@@ -299,14 +299,29 @@ async(function*(){
 	}
 });
 
+//the cat example is being solved here
+var cat = {
+	Spot : "Cat #0"
+};
 
+cat.Spot = "Cat #1";
+cat.Spot = "Cat #2";
+*/
+var UI = ["cat", "dog", "dogma", "tappu ky papa"];
+UI.shift();
+UI.unshift("ayeee", "Oyee");
+UI.splice(0, 1, "kazim", "Ali");
 
-
-
-
-
-
-
+var cityToCheck = prompt("Enter Your city");
+cityToCheck = cityToCheck.toLowerCase();
+var cleanestCity = ["karachi", "lahore", "kashmir"];
+var i;
+for(i=0; i<3; i++){
+	if(cityToCheck === cleanestCity[i]){
+		console.log("aray wah");
+		break;
+	}
+}
 
 
 
