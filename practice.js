@@ -312,7 +312,7 @@ UI.shift();
 UI.unshift("ayeee", "Oyee");
 UI.splice(0, 1, "kazim", "Ali");
 
-var cityToCheck = prompt("Enter Your city");
+/*var cityToCheck = prompt("Enter Your city");
 cityToCheck = cityToCheck.toLowerCase();
 var cleanestCity = ["karachi", "lahore", "kashmir"];
 var i;
@@ -321,10 +321,12 @@ for(i=0; i<3; i++){
 		console.log("aray wah");
 		break;
 	}
-}
+}*/
 
-
-
+var dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+var rightNow = new Date();
+var theDay = rightNow.getDay();
+var NameOfDay = dayNames[theDay];
 
 
 
