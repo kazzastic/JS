@@ -1,0 +1,28 @@
+	h1{
+		color: red;
+		text-align: center;
+	}
+	p{
+		color: blue;
+		text-align: center;
+	}
+	#first_id{
+		text-align: center;
+		color: red;
+	}
+	.first_class{
+		text-align: center;
+		padding: 80px;
+	}
+	h1:visited{
+		color: pink;
+	}
+	h1:hover{
+		color: blue;
+	}
+	h1:active{
+		color: yellow;
+	}
+	ul{
+		list-style-type: square;
+	}

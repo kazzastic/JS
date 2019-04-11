@@ -217,7 +217,7 @@ function animateIT(elementId){
 	var tick = 0;
 	var timer = setInterval(function(){
 		if(tick < 100){
-			elem.style.left = elem.style.top = tick + "px";
+			//elem.style.left = elem.style.top = tick + "px";
 			tick++;
 		}
 		else{
