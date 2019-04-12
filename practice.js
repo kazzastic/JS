@@ -328,7 +328,41 @@ var rightNow = new Date();
 var theDay = rightNow.getDay();
 var NameOfDay = dayNames[theDay];
 
+var Apple = {
+	type : "Great Red",
+	weather : "Extreme Summer",
+	rec : "recommended by doctors",
+	defects : "keeps the doctor away"
+};
+class get_name{
+	get_my_name(name){
+		return console.log(this.name = name);
+	}
+	change_my_name(name){
+		this.name = name;
+		return console.log(name);
+	}
+	bring_me_thanos(thanos){
+		var i;
+		for(i=0;i<=10;i++){
+			this.thanos = thanos;
+			console.log(thanos);
+		}
+	}
+	apple_info(){
+		var type = Apple.type;
+		var weather = Apple.weather;
+		var rec = Apple.rec;
+		var defects = Apple.defects;
 
+		console.log(type+","+ weather+","+rec+","+defects);
+	}
+}
+var Say_mah_name = new get_name();
+Say_mah_name.get_my_name("kazim");
+Say_mah_name.change_my_name("Syed Kazim Raza");
+Say_mah_name.bring_me_thanos("Thanos not Gamora");
+Say_mah_name.apple_info();
 
 
 
