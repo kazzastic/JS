@@ -54,22 +54,19 @@
       </div>
     </div>
   </nav>
-<!--Card-->
-     <div class="row">
-          <div class="card">
-            <div class="card-image">
-              <img src="babulogo.jpg" width="70 px" height="300 px">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-      </div>
+<!--Parallax-->
+ <div class="parallax-container">
+    <div class="parallax"><img src="card.jpg"></div>
+  </div>
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Parallax</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+    </div>
+  </div>
+  <div class="parallax-container">
+    <div class="parallax"><img src="card.jpg"></div>
+  </div>
 
 
 
@@ -101,6 +98,11 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
       <script>
         $('.button-collapse').sideNav();
+      </script>
+      <script>
+        $(document).ready(function(){
+        $('.parallax').parallax();
+      });
       </script>
     </body>
   </html>
