@@ -293,3 +293,7 @@ var anothergreet = 	function(name){
 assert(anothergreet("Shameer") === "Greetings Shameer", "Again, Shameer is probably greeted");
 
 var hellll =  (() => "Hello");
+document.writeln("kazim");
+document.writeln("hello");
+document.writeln("line is spaced");
+document.writeln("line is spaced");
