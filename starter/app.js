@@ -24,7 +24,7 @@ var img = document.querySelector('.dice');
 var btn;
 
 var player_one_total = 0;
-var player_two_total;
+var player_two_total = 0;
 
 //Intialization of globally declared var's
 img.style.display = 'none';
@@ -33,23 +33,31 @@ player_one_score.textContent = 0;
 player_two_score.textContent = 0;
 
 player_one.textContent = 0;
-player_two = 0;
+player_two.textContent = 0;
 
 player_one_name.textContent = "kazim";
 player_two_name.textContent = 'Server';
 
+//wokring of DOM
 btn = document.querySelector('.btn-roll').addEventListener('click', function(){
 	var rand_num = player_one.textContent = Math.floor(Math.random()*6)+1;	
-	var temp;
-	img.style.display = 'block';
-	img.src = 'dice-'+rand_num+'.png';
-	player_one_total = player_one_total + rand_num;
-	player_one_score.textContent = player_one_total;
-	if (rand_num === 1) {
+	if(rand_num !== 1){
+		img.style.display = 'block';
+		img.src = 'dice-'+rand_num+'.png';
+		player_one_total = player_one_total + rand_num;
+		player_one_score.textContent = player_one_total;
+	}
+	else{
 		img.style.display = 'none';
+		player_one.textContent = 0;
+		nextplayer();
 	}
 });
 
+function nextplayer(){
+	document.querySelector('.player-0-panel').classList.toggle('active');
+	document.querySelector('.player-1-panel').classList.toggle('active');
+}
 
 
 
