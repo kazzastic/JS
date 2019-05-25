@@ -22,6 +22,7 @@ var player_two_score = document.querySelector('#score-1');
 var img = document.querySelector('.dice');
 
 var btn;
+var flag; 
 
 var player_one_total = 0;
 var player_two_total = 0;
@@ -38,28 +39,63 @@ player_two.textContent = 0;
 player_one_name.textContent = "kazim";
 player_two_name.textContent = 'Server';
 
+flag = false;
+
 //wokring of DOM
 btn = document.querySelector('.btn-roll').addEventListener('click', function(){
-	var rand_num = player_one.textContent = Math.floor(Math.random()*6)+1;	
-	if(rand_num !== 1){
-		img.style.display = 'block';
-		img.src = 'dice-'+rand_num+'.png';
-		player_one_total = player_one_total + rand_num;
-		player_one_score.textContent = player_one_total;
+	if (flag == false){	
+		var rand_num_one = player_one.textContent = Math.floor(Math.random()*6)+1;	
+		if(rand_num_one !== 1){
+			img.style.display = 'block';
+			img.src = 'dice-'+rand_num_one+'.png';
+			player_one_total = player_one_total + rand_num_one;
+			player_one.textContent = player_one_total;
+		}
+		else{
+			img.style.display = 'none';
+			player_one.textContent = 0;
+			player_one_score.textContent = player_one_total;
+			flag = true;
+			nextplayer();
+		}
 	}
 	else{
-		img.style.display = 'none';
-		player_one.textContent = 0;
-		nextplayer();
+		var rand_num_two = player_two.textContent = Math.floor(Math.random()*6)+1;	
+		if(rand_num_two !== 1){
+			img.style.display = 'block';
+			img.src = 'dice-'+rand_num_two+'.png';
+			player_two_total = player_two_total + rand_num_two;
+			player_two.textContent = player_two_total;
+		}
+		else{
+			img.style.display = 'none';
+			player_two.textContent = 0;
+			player_two_score.textContent = player_two_total;
+			flag = false;
+			nextplayer();
+		}
 	}
 });
 
 function nextplayer(){
+
 	document.querySelector('.player-0-panel').classList.toggle('active');
 	document.querySelector('.player-1-panel').classList.toggle('active');
+
+
 }
 
+document.querySelector('.btn-new').addEventListener('click', function(){
+	player_one.textContent = 0;
+	player_one_score.textContent = 0;
+	player_one_total = 0;
 
+	player_two.textContent = 0;
+	player_two_score.textContent = 0;
+	player_two_total = 0;
+
+	img.style.display = 'none';
+});
 
 
 
