@@ -50,6 +50,7 @@ btn = document.querySelector('.btn-roll').addEventListener('click', function(){
 			img.src = 'dice-'+rand_num_one+'.png';
 			player_one_total = player_one_total + rand_num_one;
 			player_one.textContent = player_one_total;
+			win();
 		}
 		else{
 			img.style.display = 'none';
@@ -57,6 +58,7 @@ btn = document.querySelector('.btn-roll').addEventListener('click', function(){
 			player_one_score.textContent = player_one_total;
 			flag = true;
 			nextplayer();
+			win();
 		}
 	}
 	else{
@@ -66,6 +68,7 @@ btn = document.querySelector('.btn-roll').addEventListener('click', function(){
 			img.src = 'dice-'+rand_num_two+'.png';
 			player_two_total = player_two_total + rand_num_two;
 			player_two.textContent = player_two_total;
+			win();
 		}
 		else{
 			img.style.display = 'none';
@@ -73,6 +76,7 @@ btn = document.querySelector('.btn-roll').addEventListener('click', function(){
 			player_two_score.textContent = player_two_total;
 			flag = false;
 			nextplayer();
+			win();
 		}
 	}
 });
@@ -85,6 +89,8 @@ function nextplayer(){
 
 }
 
+
+//New button DOM
 document.querySelector('.btn-new').addEventListener('click', function(){
 	player_one.textContent = 0;
 	player_one_score.textContent = 0;
@@ -95,7 +101,47 @@ document.querySelector('.btn-new').addEventListener('click', function(){
 	player_two_total = 0;
 
 	img.style.display = 'none';
+
 });
+
+//Hold button DOM
+document.querySelector('.btn-hold').addEventListener('click', function(){
+	if(flag == false){
+		img.style.display = 'none';
+		player_one.textContent = 0;
+		player_one_score.textContent = player_one_total;
+		flag = true;
+		player_one_score.textContent = player_one_total;
+		nextplayer();
+		win();
+	}
+	else{
+		img.style.display = 'none';
+		player_two.textContent = 0;
+		player_two_score.textContent = player_two_total;
+		flag = false
+		player_two_score.textContent = player_two_total;
+		nextplayer();
+		win();
+	}
+});
+
+function win(){	
+	if (player_one_total >=100 || player_two_total >= 100){
+		if(player_one_total > player_two_total){
+			player_one_name.textContent = 'this nigga win';
+			return;
+		}
+		else {
+			player_two_name.textContent = 'this nigga lost';
+			return;
+		}
+	}
+	else{
+		console.log('nothing');
+		return;
+	}
+}
 
 
 
